@@ -1,8 +1,51 @@
 body {
-  padding: 50px;
+  /*padding: 50px;*/
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
-a {
+/*a {
   color: #00B7FF;
+}*/
+
+.jImage {
+  background-image: image(../images/grandCanyonbg.jpg);
+  background-image:url(../images/grandCanyonbg.jpg);
+  height: 60%;
+  background-position: center;
+}
+
+.title {
+  color: darkblue;
+}
+
+.button-manipulation {
+  margin-top: 150px;
+  margin-bottom: 50px;
+}
+
+.jTron {
+  margin: 0px;
+  padding: 0px;
+}
+.text-center {
+  border: solid;
+  border-width: 1px;
+  border-color: red;
+}
+.guest {
+  position: relative;
+
+}
+
+.guest-gmap {
+  height: 300px;
+}
+
+.main-content{
+  margin-top:25px;
+}
+.lowerBox {
+  padding right: 10px;
+  padding left:10px;
+  /*padding: 5px;*/
 }
