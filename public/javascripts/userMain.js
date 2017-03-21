@@ -16,23 +16,34 @@ $(document).ready(() => {
 
                 <div class="btn-group btn-group-justified btn-width" role="group" aria-label="...">
                   <div class="btn-group" role="group">
-                    <button type="button" class="btn btn-default edit-btn">Edit</button>
+                    <a href="userEdit.html?id=${data[i].id}"><button type="button" class="btn btn-default edit-btn">Edit</button></a>
                   </div>
                   <div class="btn-group" role="group">
-                    <button type="button" class="btn btn-default delete-btn">Delete</button>
+                    <button type="button" class="btn btn-default delete-btn" id=${data[i].id}>Delete</button>
                   </div>
                 </div>
               </div>`)
       }
     })
 
-  //   $.ajax({
-  //     method: 'GET',
-  //     url: 'https://fantastic-weather.herokuapp.com/locations'
-  //   })
-  //   .then( (data) => {
-  //     console.log(data);
-  //   }).catch((err) => {
-  //    console.log(err)
-  //  })
+
+})
+
+$(document).on('click','.delete-btn',function(){
+   var delId = $(this).attr('id');
+
+   console.log(delId);
+   $.ajax({
+     url: `${server}/locations/${delId}`,
+     type: 'DELETE',
+     success: function (result) {
+       console.log('Location successfully deleted')
+       location.reload();
+     },
+     error: function (result) {
+       console.log('Something went wrong when trying to delete location');
+     }
+   })
+
+
 })
