@@ -13,10 +13,10 @@ $.get(`${server}/zipcodes`, ......)
 $.get(`${server}/zipcodes/${ZIPCODE.id}`, ......)
 
 //** READ ALL IDEALWEATHERS **
-$.get(`${server}/locations`, ......)
+$.get(`${server}/idealWeather`, ......)
 
 //** READ ONE IDEALWEATHER **
-$.get(`${server}/locations/${USERNAME.id}/${LOCATION.id}`, ......)
+$.get(`${server}/idealWeather/${USERNAME.id}/${LOCATION.id}`, ......)
 
 
 //************************ CREATE ************************
