@@ -3,9 +3,10 @@ body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
-/*a {
-  color: #00B7FF;
-}*/
+a {
+  color:inherit;
+  /*color: #00B7FF;*/
+}
 
 .jImage {
   background-image: image(../images/grandCanyonbg.jpg);
@@ -48,4 +49,23 @@ body {
   padding right: 10px;
   padding left:10px;
   /*padding: 5px;*/
+}
+
+/* css specific to user main*/
+.border{
+  border: solid;
+  border-width: 1px;
+  border-color: red;
+}
+
+.userLocation {
+  height:400px;
+  width:auto;
+}
+.btn-width {
+  width:300px;
+}
+
+.spacer {
+  height:150px;
 }

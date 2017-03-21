@@ -1,4 +1,4 @@
-var dev = 'http://localhost:5280'
+var dev = 'https://fantasticweatherfrontend.firebaseapp.com'
 
 //what's our heroku setup? n/s
 var heroku = 'https://g-drinks.herokuapp.com'
