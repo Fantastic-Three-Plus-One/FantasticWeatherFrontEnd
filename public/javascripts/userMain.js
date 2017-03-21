@@ -4,6 +4,7 @@ var server = heroku
 $(document).ready(() => {
   console.log('linked');
   $.get(`${server}/locations`,(data) =>{
+    console.log(data);
       for (var i = 0; i < data.length; i++) {
         $('.scrollmenu').append(`<div class="border userLocation">
                 <h3 class="location">${data[i].name}</h3>
