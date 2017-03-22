@@ -1,4 +1,5 @@
 $(document).ready(function(){
+  $.ajaxSetup({xhrFields: { withCredentials: true } })
   $.support.cors = true;
   $(document).on("submit", ".submitRegistration", function(event) {
     event.preventDefault()
@@ -18,7 +19,7 @@ $(document).ready(function(){
           password: pass
         }
         //'https://fantastic-weather.herokuapp.com/verification/register
-        $.ajax('http://localhost:5280/verification/register', {
+        $.ajax('http://localhost:8080/verification/register', {
           method: 'POST',
           contentType: 'application/json',
           crossDomain: true,
@@ -44,7 +45,7 @@ $(document).ready(function(){
           password: pass
         }
         //'https://fantastic-weather.herokuapp.com/verification
-        $.post('http://localhost:5280/verification/login', $(this).serialize()).done(
+        $.post('http://localhost:8080/verification/login', $(this).serialize()).done(
           function(data) {
             // $.ajax('http://localhost:5280/verification/verify', {
             //   method: "GET",
