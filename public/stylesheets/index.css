@@ -1,0 +1,45 @@
+body {
+  /*padding: 50px;*/
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color:inherit;
+}
+
+
+
+/*Index page specific css*/
+.jImage {
+  background-image: image(../images/grandCanyonbg.jpg);
+  background-image:url(../images/grandCanyonbg.jpg);
+  height: 60%;
+  background-position: center;
+  opacity:0.7;
+}
+
+.title {
+  color: darkblue;
+}
+
+.button-manipulation {
+  margin-top: 150px;
+  margin-bottom: 50px;
+}
+
+.jTron {
+  margin: 0px;
+  padding: 0px;
+}
+
+.guest {
+  position: relative;
+}
+
+.main-content{
+  margin-top:25px;
+}
+.lowerBox {
+  padding right: 10px;
+  padding left:10px;
+}
