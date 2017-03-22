@@ -14,19 +14,28 @@ a {
 .spacer {
   height:150px;
 }
+.border {
+  border: solid;
+  border-width: 2px;
+  border-color: darkblue;
+  border-radius: 20px;
+  margin: 10px;
+}
+
 /*will want to -
 1 tweak background to transparent
 2 add a gentle border to each box
 */
 div.scrollmenu {
-    background-color: #333;
+    background-color: white;
     overflow: auto;
     white-space: nowrap;
+
 }
 
 div.scrollmenu div {
     display: inline-block;
-    color: white;
+    color: darkblue;
     text-align: center;
     padding: 14px;
     text-decoration: none;
