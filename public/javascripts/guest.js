@@ -1,12 +1,6 @@
 var dev = 'https://fantasticweatherfrontend.firebaseapp.com'
-
-//what's our heroku setup? n/s
 var heroku = 'https://g-drinks.herokuapp.com'
-//redefine as need be for testing and production
 var server = heroku
-
-
-
 
 $(document).ready(function() {
     console.log('linked');
