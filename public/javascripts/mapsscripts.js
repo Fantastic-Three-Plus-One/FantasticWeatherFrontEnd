@@ -50,7 +50,11 @@ function initMap() {
         (place.address_components[2] && place.address_components[2].short_name || '')
       ].join(' ');
     }
-    console.log(address)
+
+    console.log(place.geometry.location.lat(),place.geometry.location.lng());
+    console.log(place.place_id);
+
+
     infowindowContent.children['place-icon'].src = place.icon;
     infowindowContent.children['place-name'].textContent = place.name;
     infowindowContent.children['place-address'].textContent = address;
