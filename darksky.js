@@ -1,6 +1,6 @@
 $(document).ready(function($) {
 // This will not run!! Needs API key!!
-const myKey = 'XXXXXXXXXXXXX'
+const myKey = '#############################'
 var getInfo = function(){
     //Grabs the longitude and latitude
     var myLongitude = $('#long').val();
