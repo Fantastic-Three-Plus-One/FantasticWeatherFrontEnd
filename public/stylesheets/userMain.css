@@ -7,10 +7,6 @@ a {
   color:inherit;
 }
 
-.btn-width {
-  width:300px;
-}
-
 .spacer {
   height:150px;
 }
@@ -22,25 +18,70 @@ a {
   margin: 10px;
 }
 
-/*will want to -
-1 tweak background to transparent
-2 add a gentle border to each box
-*/
 div.scrollmenu {
-    background-color: white;
-    overflow: auto;
-    white-space: nowrap;
-
+  background-image: url('../images/sky.jpg');
+  overflow: auto;
+  white-space: nowrap;
+  margin: 0 100px;
+  border: 10px solid #000;
 }
 
-div.scrollmenu div {
-    display: inline-block;
-    color: darkblue;
-    text-align: center;
-    padding: 14px;
-    text-decoration: none;
+div.scrollmenu .userLocation {
+  display: inline-block;
+  background: #eee;
+  color: black;
+  text-align: center;
+  padding: 14px;
+  text-decoration: none;
+  width: 300px;
+  margin: 20px;
+  border-radius: 10px;
 }
 
 div.scrollmenu a:hover {
-    background-color: #777;
+  background-color: #777;
+}
+
+.xxx {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.xxx canvas {
+  height: 150px;
+  width: 150px;
+  text-align: center;
+}
+
+.location-info-main {
+  margin: 0 10%;
+}
+.location-info {
+  display: flex;
+  justify-content: space-between;
+  font-size: 16px;
+}
+
+.btn-group .delete-btn, .btn-group .edit-btn {
+  background: #fff;
+  width: 80px;
+}
+
+.btn-group .edit-btn {
+  margin: 10px;
+}
+
+.btn-group .edit-btn:hover {
+  background: #fff;
+  border: 1px solid #026600;
+}
+
+.btn-group .delete-btn:hover {
+  background: #fff;
+  border: 1px solid #9e0000;
+}
+
+canvas {
+  margin: 20px auto;
 }
