@@ -43,7 +43,7 @@ $(document).ready(() => {
             </div>
             <div>
               <div class="btn-group" role="group">
-                <a href="userEdit.html?id=${data[i].id}"><button type="button" class="btn btn-default edit-btn">Edit</button></a>
+                <a href="userEdit.html?id=${data[i].id}" class="btn btn-default edit-btn">Edit</a>
               </div>
               <div class="btn-group" role="group">
                 <button type="button" class="btn btn-default delete-btn" id=${data[i].id}>Delete</button>
@@ -76,31 +76,18 @@ $(document).ready(() => {
             skycons.add(`icon${result[j].id}`, Skycons[newWeatherIcon])
             skycons.play()
 
-            // var whereAmI = pJSON['timezone'];
             var myTemp = parseInt(pJSON['currently']['temperature']);
             var myPrecip = pJSON['daily']['data'][0]['precipProbability']
             var myWind = pJSON['daily']['data'][0]['windSpeed']
             $(`.temp${result[j].id}`).append(`<p>Temperature: </p><p>${myTemp}&deg;F</p>`)
             $(`.precip${result[j].id}`).append(`<p>Precipitation: </p><p>${myPrecip} %</p>`)
             $(`.wind${result[j].id}`).append(`<p>Wind: </p><p>${myWind} mph</p>`)
-
-
-            // var myWeather = ("Current temperature in " + whereAmI + " is: " + myTemp);
-            // $('.result').html("<h3>" + myWeather + "</h3>")
-            // $('.lottsoweather').html(
-            //   "<li>Max Temp: " + pJSON['daily']['data'][0]['temperatureMax'] + "</li>" +
-            //   "<li>Min Temp: " + pJSON['daily']['data'][0]['temperatureMin'] + "</li>" +
-            //   "<li>Max Wind: " + pJSON['daily']['data'][0]['windSpeed']  + "</li>" +
-            //   "<li>Precip: " + pJSON['daily']['data'][0]['precipProbability']  + "% </li>" +
-            //   "<li> Summary: " + pJSON['daily']['summary']  + "</li>"
-            // )
           }
         })
       }
       getInfo()
     }
   })
-
 })
 
 $(document).on('click','.delete-btn',function(){
