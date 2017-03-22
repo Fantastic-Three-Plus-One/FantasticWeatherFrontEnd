@@ -1,11 +1,12 @@
-$(document).ready(() => {
+// $(document).ready(() => {
 $.ajaxSetup({xhrFields: { withCredentials: true } })
 
 
-var heroku = 'https://fantastic-weather.herokuapp.com'
+// var heroku = 'https://fantastic-weather.herokuapp.com'
+var heroku = 'http://localhost:8080'
 var server = heroku
 
-
+var place
 var lng
 var lat
 var placeIdZip
@@ -15,9 +16,8 @@ $(document).on('click','.newInfo-submit', ()=>{
 
     var newLocation = {
        name: $('#hikeName').val(),
-       longitude: $('lng').val(),
-       latitude: $('lat').val(),
-       zipcode: $('placeIdZip').val()
+       longitude: place.geometry.location.lng(),
+       latitude: place.geometry.location.lat()
      }
      console.log(newLocation);
      $.post(`${server}/locations`, newLocation)
@@ -65,7 +65,7 @@ function initMap() {
   autocomplete.addListener('place_changed', function() {
     infowindow.close();
     marker.setVisible(false);
-    var place = autocomplete.getPlace();
+    place = autocomplete.getPlace();
     if (!place.geometry) {
       // Validates search input
       window.alert("No details available for input: '" + place.name + "'");
@@ -104,4 +104,4 @@ function initMap() {
     infowindow.open(map, marker);
   });
 }
-})
+// })
