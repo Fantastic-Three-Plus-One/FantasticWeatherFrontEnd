@@ -1,4 +1,4 @@
-$(document).ready(() => {
+// $(document).ready(() => {
 $.ajaxSetup({xhrFields: { withCredentials: true } })
 
 
@@ -17,7 +17,7 @@ $(document).on('click','.newInfo-submit', ()=>{
        name: $('#hikeName').val(),
        longitude: $('lng').val(),
        latitude: $('lat').val(),
-       zipcode: $('placeIdZip').val()
+       zipcode_id: $('placeIdZip').val()
      }
      console.log(newLocation);
      $.post(`${server}/locations`, newLocation)
@@ -93,8 +93,9 @@ function initMap() {
     lat = place.geometry.location.lat();
     lng = place.geometry.location.lng();
     placeIdZip = place.place_id;
-
-    console.log(place.geometry.location.lat(),place.geometry.location.lng())
+    
+    console.log(place);
+    console.log(place.geometry.location.lat(),place.geometry.location.lng());
     console.log(place.place_id);
 
 
@@ -104,4 +105,4 @@ function initMap() {
     infowindow.open(map, marker);
   });
 }
-})
+// })
