@@ -1,6 +1,6 @@
 $(document).ready(function($) {
 // This will not run!! Needs API key!!
-const myKey = 'XXXXXXXXXXXXX'
+const myKey = '6c0dae0571b5513df10420a9d9b02045'
 var getInfo = function(){
     //Grabs the longitude and latitude
     var myLongitude = $('#long').val();
@@ -10,6 +10,7 @@ var getInfo = function(){
       url : "https://api.darksky.net/forecast/" + myKey + "/" + myLongitude + "," + myLatitude +      "?exclude=minutely,hourly,alerts,flags",
       dataType : "jsonp",
       success : function(pJSON) {
+        console.log(pJSON);
         var whereAmI = pJSON['timezone'];
         var myTemp = pJSON['currently']['temperature'];
         var myWeather = ("Current temperature in " + whereAmI + " is: " + myTemp);

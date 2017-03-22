@@ -2,7 +2,6 @@ var heroku = 'https://fantastic-weather.herokuapp.com'
 var server = heroku
 
 $(document).ready(() => {
-  console.log('linked');
   $.get(`${server}/locations`,(data) =>{
     if (data.length < 3) {
       for (var i = 0; i < data.length; i++) {
@@ -49,25 +48,19 @@ $(document).ready(() => {
         }
       }
     })
-
-
 })
 
 $(document).on('click','.delete-btn',function(){
-   var delId = $(this).attr('id');
-
-   console.log(delId);
-   $.ajax({
-     url: `${server}/locations/${delId}`,
-     type: 'DELETE',
-     success: function (result) {
-       console.log('Location successfully deleted')
-       location.reload();
-     },
-     error: function (result) {
-       console.log('Something went wrong when trying to delete location');
-     }
-   })
-
-
+  var delId = $(this).attr('id');
+  $.ajax({
+    url: `${server}/locations/${delId}`,
+    type: 'DELETE',
+    success: function (result) {
+      console.log('Location successfully deleted')
+      location.reload();
+    },
+    error: function (result) {
+      console.log('Something went wrong when trying to delete location');
+    }
+  })
 })
