@@ -24,14 +24,51 @@ div.scrollmenu {
     white-space: nowrap;
 }
 
-div.scrollmenu div {
+div.scrollmenu .userLocation {
     display: inline-block;
-    color: white;
+    background: #eee;
+    color: black;
     text-align: center;
     padding: 14px;
     text-decoration: none;
+    width: 300px;
+    margin: 20px;
+    border-radius: 10px;
 }
 
 div.scrollmenu a:hover {
     background-color: #777;
+}
+
+.xxx {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.xxx canvas {
+  height: 150px;
+  width: 150px;
+  text-align: center;
+}
+
+.location-info-main {
+  margin: 0 10%;
+}
+.location-info {
+  display: flex;
+  justify-content: space-between;
+  font-size: 16px;
+}
+
+.btn-group .delete-btn, .btn-group .edit-btn {
+  width: 80px;
+}
+
+.btn-group .edit-btn {
+  margin-right: 20px;
+}
+
+canvas {
+  margin: 20px auto;
 }
