@@ -1,57 +1,26 @@
-body {
-  /*padding: 50px;*/
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-}
+      body {
+        /*padding: 50px;*/
+        font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+      }
 
-a {
-  color:inherit;
-  /*color: #00B7FF;*/
-}
+      a {
+        color:inherit;
+      }
 
-.jImage {
-  background-image: image(../images/grandCanyonbg.jpg);
-  background-image:url(../images/grandCanyonbg.jpg);
-  height: 60%;
-  background-position: center;
-}
+/*for formatting purposes*/
 
-.title {
-  color: darkblue;
-}
-
-.button-manipulation {
-  margin-top: 150px;
-  margin-bottom: 50px;
-}
-
-.jTron {
-  margin: 0px;
-  padding: 0px;
-}
-.text-center {
+.test-border {
   border: solid;
   border-width: 1px;
   border-color: red;
 }
+
 .guest {
   position: relative;
 
 }
 
-.guest-gmap {
-  height: 300px;
-}
 
-.main-content{
-  margin-top:25px;
-}
-.lowerBox {
-  padding right: 10px;
-  padding left:10px;
-  /*padding: 5px;*/
-}
-
-/* css specific to user main*/
 .border{
   border: solid;
   border-width: 1px;
@@ -66,25 +35,7 @@ a {
   width:300px;
 }
 
-.spacer {
-  height:150px;
-}
 
+
+/*not sure what page test relates to*/
 /*TEST*/
-div.scrollmenu {
-    background-color: #333;
-    overflow: auto;
-    white-space: nowrap;
-}
-
-div.scrollmenu div {
-    display: inline-block;
-    color: white;
-    text-align: center;
-    padding: 14px;
-    text-decoration: none;
-}
-
-div.scrollmenu a:hover {
-    background-color: #777;
-}

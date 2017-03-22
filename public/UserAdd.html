@@ -3,12 +3,29 @@
   <head lang='en'>
     <meta charset='utf-8'>
     <title>Fantastic Weather</title>
+    <!-- Jquery script -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <link rel='stylesheet' type='text/css' href='stylesheets/style.css'>
+    <!-- moment js for date picker -->
 
-    <script src='javascripts/index.js'></script>
+    <!-- <script type="text/javascript" src="//cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script> -->
+
+    <!-- Latest compiled and minified CSS -->
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- css stylesheet -->
+    <link rel='stylesheet' type='text/css' href='stylesheets/userAdd.css'>
+
+    <!-- Include Required Prerequisites -->
+<!-- <script type="text/javascript" src="//cdn.jsdelivr.net/jquery/1/jquery.min.js"></script>
+<script type="text/javascript" src="//cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/bootstrap/3/css/bootstrap.css" /> -->
+
+<!-- Include Date Range Picker -->
+<!-- <script type="text/javascript" src="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.js"></script>
+<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.css" /> -->
+
+
+    <script src='javascripts/userAdd.js'></script>
     <!--after thinking about it more, I'm not sure if we'll need this page! if we can just do a registration on the home page....  -->
   </head>
   <nav class="navbar navbar-default navbar-static-top">
@@ -34,6 +51,22 @@
               <label for="location">select time</label>
               <input type="email" class="form-control" id="placeSearch">
             </div>
+
+
+<input type="text" name="birthdate" value="10/24/1984" />
+
+<script type="text/javascript">
+$(function() {
+    $('input[name="birthdate"]').daterangepicker({
+        singleDatePicker: true,
+        showDropdowns: true
+    },
+    function(start, end, label) {
+        var years = moment().diff(start, 'years');
+        alert("You are " + years + " years old.");
+    });
+});
+</script>
           </form>
         <div class="col-md-1"></div>
       </div>
