@@ -1,4 +1,5 @@
-var heroku = 'https://fantastic-weather.herokuapp.com'
+// var heroku = 'https://fantastic-weather.herokuapp.com'
+var heroku = 'http://localhost:8080'
 var server = heroku
 
 $(document).ready(() => {
@@ -91,6 +92,7 @@ $(document).ready(() => {
 })
 
 $(document).on('click','.delete-btn',function(){
+  $.ajaxSetup({xhrFields: { withCredentials: true } })
   var delId = $(this).attr('id');
   $.ajax({
     url: `${server}/locations/${delId}`,

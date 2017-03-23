@@ -1,18 +1,11 @@
 $(document).on('click','.test-email-btn', function () {
+  $.ajaxSetup({xhrFields: { withCredentials: true } })
+  var mail = {
+    to: 'faisonusmc@gmail.com',
+    text: 'Weather looks great today for your hike!'
+  }
 
-  newEmail = 'This is a test email'
-
-  $.ajax({
-    type: "POST",
-    beforeSend: function(request) {
-      request.setRequestHeader("X-FullContact-APIKey", '60913fa587d09c69');
-    },
-    url: "https://api.fullcontact.com/v2/person.json?email=faisonusmc@gmail.com",
-    data: newEmail,
-    processData: false,
-    success: function(msg) {
-      console.log('It worked?');
-      $("#results").append("The result =" + StringifyPretty(msg));
-    }
+  $.post('/mailgun', mail, function (result) {
+    console.log(result);
   })
 })
