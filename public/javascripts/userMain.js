@@ -11,7 +11,7 @@ $(document).ready(() => {
           <div class='xxx'>
             <h3 class="location">${data[i].name}</h3>
             <!-- potential gif load based on current weather ie sun, rain, clouds, windy- think yahoo weather! -->
-            <canvas id="icon${data[i].id}" width="150" height="150"></canvas>
+            <canvas id="canvas${data[i].id}" width="150" height="150" value=${data[i].id}></canvas>
             <div class='location-info-main'>
               <div class="location-info temp${data[i].id}"></div>
               <div class="location-info precip${data[i].id}"></div>
@@ -36,7 +36,7 @@ $(document).ready(() => {
           <div class='xxx'>
             <h3 class="location">${data[i].name}</h3>
             <!-- potential gif load based on current weather ie sun, rain, clouds, windy- think yahoo weather! -->
-            <canvas id="icon${data[i].id}" width="150" height="150"></canvas>
+            <canvas id="canvas${data[i].id}" width="150" height="150" value=${data[i].id}></canvas>
             <div class='location-info-main'>
               <div class="location-info temp${data[i].id}"></div>
               <div class="location-info precip${data[i].id}"></div>
@@ -68,13 +68,13 @@ $(document).ready(() => {
         console.log(myLatitude);
         //Makes the request
         $.ajax({
-          url : "https://api.darksky.net/forecast/" + myKey + "/" + myLatitude + "," + myLongitude +      "?exclude=minutely,hourly,alerts,flags",
+          url : "https://api.darksky.net/forecast/" + myKey + "/" + myLatitude + "," + myLongitude + "?exclude=minutely,hourly,alerts,flags",
           dataType : "jsonp",
           success : function(pJSON) {
             var skycons = new Skycons({"color": "black"})
             var WeatherIcon = pJSON.currently.icon
             var newWeatherIcon = WeatherIcon.replace(/-/g, '_').toUpperCase()
-            skycons.add(`icon${result[j].id}`, Skycons[newWeatherIcon])
+            skycons.add(`canvas${result[j].id}`, Skycons[newWeatherIcon])
             skycons.play()
 
             var myTemp = parseInt(pJSON['currently']['temperature']);
@@ -104,5 +104,39 @@ $(document).on('click','.delete-btn',function(){
     error: function (result) {
       console.log('Something went wrong when trying to delete location');
     }
+  })
+})
+
+$(document).on('click', 'canvas', function (event) {
+  var locationID = $(event.target).attr('value')
+  console.log(locationID)
+  $.get(`${server}/locations/${locationID}`)
+    .then(function (data) {
+      var locLong = data[0].longitude
+      var locLat = data[0].latitude
+      var coordinates = {
+        longitude: locLong,
+        latitude: locLat
+      }
+      return coordinates
+    }).then( result => {
+      console.log('coordinates:');
+      console.log(result);
+      var myLongitude = result.longitude
+      var myLatitude = result.latitude
+      $.ajax({
+        url : "https://api.darksky.net/forecast/" + 'fd59c08b71d9a82c1248b5012aca9c44' + "/" + myLatitude + "," + myLongitude + "?exclude=minutely,hourly,alerts,flags",
+        dataType : "jsonp",
+        success : function(pJSON) {
+          console.log(pJSON)
+
+          // var myTemp = parseInt(pJSON['currently']['temperature']);
+          // var myPrecip = pJSON['daily']['data'][0]['precipProbability']
+          // var myWind = pJSON['daily']['data'][0]['windSpeed']
+          // $(`.temp${result[j].id}`).append(`<p>Temperature: </p><p>${myTemp}&deg;F</p>`)
+          // $(`.precip${result[j].id}`).append(`<p>Precipitation: </p><p>${myPrecip} %</p>`)
+          // $(`.wind${result[j].id}`).append(`<p>Wind: </p><p>${myWind} mph</p>`)
+        }
+      })
   })
 })
