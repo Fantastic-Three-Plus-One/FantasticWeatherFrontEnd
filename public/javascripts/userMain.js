@@ -4,7 +4,7 @@ var server = heroku
 
 $(document).ready(() => {
   $.ajaxSetup({xhrFields: { withCredentials: true } })
-  $.get(`${server}/locations`,(data) =>{
+  $.get(`${server}/locations/user`,(data) =>{
     if (data.length < 3) {
       for (var i = 0; i < data.length; i++) {
         $('.scrollmenu').append(`<div class="border userLocation text-center">
@@ -110,6 +110,7 @@ $(document).on('click','.delete-btn',function(){
 $(document).on('click', 'canvas', function (event) {
   const myKey = 'fd59c08b71d9a82c1248b5012aca9c44'
   var locationID = $(event.target).attr('value')
+  $.ajaxSetup({xhrFields: { withCredentials: true } })
   $.get(`${server}/locations/${locationID}`)
     .then(function (data) {
       var locLong = data[0].longitude
