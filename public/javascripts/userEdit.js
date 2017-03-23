@@ -9,11 +9,12 @@ $(document).ready(function() {
 
   hikeId = getUrlParameter('id')
   console.log(hikeId)
+  $.ajaxSetup({xhrFields: { withCredentials: true } })
   $.get(`${server}/locations/${hikeId}`, (data)  => {
     console.log(data)
     $('#hikeName').val(`${data[0].name}`)
   })
-
+  $.ajaxSetup({xhrFields: { withCredentials: true } })
   $.get(`${server}/idealWeather/${1}/${hikeId}`, (data) => {
     console.log(data)
     $('#maxTemp').val(`${data[0].temp_max}`)
@@ -28,6 +29,7 @@ $(document).ready(function() {
 $(document).on('click','.name-submit', ()=>{
   var nameUpdate = {name:$('#hikeName').val()}
   console.log(nameUpdate)
+  $.ajaxSetup({xhrFields: { withCredentials: true } })
   $.ajax({
     url: `${server}/locations/${hikeId}`,
     type: 'PUT',
@@ -49,7 +51,7 @@ $(document).on('click','.info-submit', ()=>{
     wind_max: $('#wind_max').val(),
     percip_max: $('#percip_max').val()
   }
-
+  $.ajaxSetup({xhrFields: { withCredentials: true } })
   $.ajax({
     url: `${server}/idealWeather/${username_id}/${hikeId}`,
     type: 'PUT',

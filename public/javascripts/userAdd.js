@@ -2,14 +2,16 @@
 
 
 
+
 // var heroku =
 var server = 'http://localhost:8080'
 // var server = 'https://fantastic-weather.herokuapp.com'
 
+
 var place
 var lng
 var lat
-var placeIdZip
+
 
 // $.ajax('http://localhost:8080/verification/verify', {
 //   xhrFields: {
@@ -31,18 +33,34 @@ $.get(`${server}/locations`,(data) => {
 $(document).on('click','.newInfo-submit', () => {
   console.log('clicked!');
 
-  var newLocation = {
-      name: $('#hikeName').val(),
-      longitude: place.geometry.location.lng(),
-      latitude: place.geometry.location.lat()
-    }
-  console.log(newLocation);
-  $.ajaxSetup({xhrFields: { withCredentials: true } })
-  $.post(`${server}/locations`, newLocation)
-  .then((result) => {
-    console.log(result);
-  })
-  .catch(err => console.log("error", err))
+
+    var newLocation = {
+       name: $('#hikeName').val(),
+       longitude: place.geometry.location.lng(),
+       latitude: place.geometry.location.lat()
+     }
+    //  console.log(newLocation);
+     $.ajaxSetup({xhrFields: { withCredentials: true } })
+     $.post(`${server}/locations`, newLocation)
+     .then((result) => {
+       console.log(result[0].id)
+       newIdealWeather = {
+       username_id: 2,
+       location_id: result[0].id,
+       temp_max: $('#temp_max').val(),
+       temp_min: $('#temp_min').val(),
+       wind_max: $('#Wind_max').val(),
+       percip_max: $('#percip_max').val()
+     }
+     console.log(newIdealWeather);
+     $.ajaxSetup({xhrFields: { withCredentials: true } })
+     $.post(`${server}/idealWeather`, newIdealWeather)
+     .then((result) => {
+       console.log(result)
+     }).catch(err => console.log("error", err))
+   //
+    }).catch(err => console.log("error", err))
+
 
   // $.ajax(`$`, {
   //   xhrFields: {
@@ -69,6 +87,7 @@ $(document).on('click','.newInfo-submit', () => {
     //  }
 
     //  $.post(`${server}/idealWeather`, newIdealWeather)
+
 })
 
 function initMap() {
@@ -126,10 +145,11 @@ function initMap() {
 
     lat = place.geometry.location.lat();
     lng = place.geometry.location.lng();
-    placeIdZip = place.place_id;
+
 
     // console.log(place.geometry.location.lat(),place.geometry.location.lng())
     // console.log(place.place_id);
+
 
 
     infowindowContent.children['place-icon'].src = place.icon;
