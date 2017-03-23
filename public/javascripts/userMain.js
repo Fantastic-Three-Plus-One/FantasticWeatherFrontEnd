@@ -125,7 +125,7 @@ $(document).on('click', 'canvas', function (event) {
       var myLongitude = result.longitude
       var myLatitude = result.latitude
       $.ajax({
-        url : "https://api.darksky.net/forecast/" + myKey + "/" + myLatitude + "," + myLongitude + "?exclude=minutely,hourly,alerts,flags",
+        url : `https://api.darksky.net/forecast/${myKey}/${myLatitude},${myLongitude}?exclude=minutely,hourly,alerts,flags`,
         dataType : "jsonp",
         success : function(darkData) {
           console.log(darkData);
@@ -143,9 +143,6 @@ $(document).on('click', 'canvas', function (event) {
       });
   })
 })
-
-
-
 
 // $.ajax({
 //   url : "https://api.darksky.net/forecast/" + 'fd59c08b71d9a82c1248b5012aca9c44' + "/" + myLatitude + "," + myLongitude + "?exclude=minutely,hourly,alerts,flags",
