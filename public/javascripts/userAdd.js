@@ -4,7 +4,7 @@
 
 
 // var heroku =
-var server = 'http://localhost:8080'
+var server = 'http://localhost:8000'
 // var server = 'https://fantastic-weather.herokuapp.com'
 
 
@@ -13,7 +13,7 @@ var lng
 var lat
 
 
-// $.ajax('http://localhost:8080/verification/verify', {
+// $.ajax('http://localhost:8000/verification/verify', {
 //   xhrFields: {
 //     withCredentials: true
 //   },
