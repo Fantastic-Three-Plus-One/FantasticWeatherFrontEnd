@@ -2,14 +2,14 @@
 $.ajaxSetup({xhrFields: { withCredentials: true } })
 
 
-// var heroku = 'https://fantastic-weather.herokuapp.com'
-var heroku = 'http://localhost:8080'
+var heroku = 'https://fantastic-weather.herokuapp.com'
+// var heroku = 'http://localhost:8080'
 var server = heroku
 
 var place
 var lng
 var lat
-var placeIdZip
+
 
 $(document).on('click','.newInfo-submit', ()=>{
   console.log('clicked!');
@@ -19,22 +19,25 @@ $(document).on('click','.newInfo-submit', ()=>{
        longitude: place.geometry.location.lng(),
        latitude: place.geometry.location.lat()
      }
-     console.log(newLocation);
+    //  console.log(newLocation);
      $.post(`${server}/locations`, newLocation)
      .then((result) => {
-       console.log(result);
+       console.log(result[0].id)
+       newIdealWeather = {
+       username_id: 2,
+       location_id: result[0].id,
+       temp_max: $('#temp_max').val(),
+       temp_min: $('#temp_min').val(),
+       wind_max: $('#Wind_max').val(),
+       percip_max: $('#percip_max').val()
+     }
+     console.log(newIdealWeather);
+     $.post(`${server}/idealWeather`, newIdealWeather)
+     .then((result) => {
+       console.log(result)
      })
-    //  console.log(updatedIdealWeather);
-    //  newIdealWeather = {
-    //   //  username_id:// will come from passport
-    //   //  location_id: // we will get this back from the first post
-    //    temp_max: $('#temp_max').val(),
-    //    temp_min: $('#temp_min').val(),
-    //    wind_max: $('#Wind_max').val(),
-    //    percip_max: $('#percip_max').val()
-    //  }
-
-    //  $.post(`${server}/idealWeather`, newIdealWeather)
+   //
+    })
 })
 
 function initMap() {
@@ -92,11 +95,11 @@ function initMap() {
 
     lat = place.geometry.location.lat();
     lng = place.geometry.location.lng();
-    placeIdZip = place.place_id;
+
 
     console.log(place);
     console.log(place.geometry.location.lat(),place.geometry.location.lng());
-    console.log(place.place_id);
+
 
 
     infowindowContent.children['place-icon'].src = place.icon;
