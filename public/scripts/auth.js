@@ -1,6 +1,7 @@
 $(document).ready(function(){
   $.ajaxSetup({xhrFields: { withCredentials: true } })
   $.support.cors = true;
+
   $(document).on("submit", ".submitRegistration", function(event) {
     event.preventDefault()
     var pass = $('.password').val();
@@ -28,15 +29,18 @@ $(document).ready(function(){
           crossDomain: true,
           data: JSON.stringify(newUser)
         }).then(response => {
-          alert(response)
+          alert("New User Created!")
         })
       }
     }
   })
+
   $(document).on('submit', '.submitLogin', function(event) {
     event.preventDefault()
     var pass = $('.passwordLogin').val();
     var userEmail = $('.emailLogin').val();
+    // alert(userEmail)
+    // alert(pass)
     if (!userEmail) {
       alert("email must be filled in")
     } else {
@@ -48,7 +52,8 @@ $(document).ready(function(){
           password: pass
         }
         //'https://fantastic-weather.herokuapp.com/verification
-        $.post('http://localhost:8000/verification/login', $(this).serialize()).done(
+        $.ajaxSetup({xhrFields: { withCredentials: true } })
+        $.post('http://localhost:8000/verification/login', returningUser).done(
           function(data) {
             // $.ajax('http://localhost:5280/verification/verify', {
             //   method: "GET",
@@ -59,6 +64,7 @@ $(document).ready(function(){
             //   console.log(err)
             //   alert("failed");
             // })
+          alert("you are logged in!")
           location.href = "/UserMain.html"
         }).fail(function(err){
           alert("login information incorrect")
