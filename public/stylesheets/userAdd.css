@@ -1,11 +1,25 @@
 
 /*all pulled over from Steve's mapstyle.css*/
+/*font-family: 'Maven Pro', sans-serif;
+font-family: 'Josefin Sans', sans-serif;*/
+
 #map {
-  height: 350px;
+  height: 450px;
   border-radius: 10px;
+  margin-bottom: 20px;
 }
 html, body {
-  height: 450px;
+  height: 100%;
+}
+.hike-header {
+  font-family: 'Maven Pro', sans-serif;
+  font-weight: bolder;
+  text-transform: uppercase;
+}
+.data-fields {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 2rem;
+  font-variant: small-caps;
 }
 
 #infowindow-content .title {
@@ -60,8 +74,10 @@ html, body {
 }
 
 #title {
+  font-family: 'Josefin Sans', sans-serif;
   color: #black;
-  font-size: 1rem;
+  font-size: 1.5rem;
+  text-align: left;
   font-weight: 500;
   padding: 3px 6px;
 }

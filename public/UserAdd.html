@@ -2,160 +2,122 @@
 
 <!-- it would be great to be able to click on the map rather than the search window, but stretch goals -->
 <html>
-  <head lang='en'>
+
+<head lang='en'>
     <meta charset='utf-8'>
     <title>Fantastic Weather</title>
-    <!-- Jquery script -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <!-- moment js for date picker -->
-
-    <!-- <script type="text/javascript" src="//cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script> -->
-
-    <!-- Latest compiled and minified CSS -->
-    <!-- Bootstrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <!-- css stylesheet -->
     <link rel='stylesheet' type='text/css' href='stylesheets/userAdd.css'>
-
-    <!-- Include Required Prerequisites -->
-<!-- <script type="text/javascript" src="//cdn.jsdelivr.net/jquery/1/jquery.min.js"></script>
-<script type="text/javascript" src="//cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
-<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/bootstrap/3/css/bootstrap.css" /> -->
-
-<!-- Include Date Range Picker -->
-<!-- <script type="text/javascript" src="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.js"></script>
-<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.css" /> -->
-
-
     <script src='javascripts/userAdd.js'></script>
-    <!--after thinking about it more, I'm not sure if we'll need this page! if we can just do a registration on the home page....  -->
-  </head>
-  <nav class="navbar navbar-default navbar-static-top">
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans|Maven+Pro" rel="stylesheet">
+</head>
+
+<nav class="navbar navbar-default navbar-static-top">
     <div class="container">
-      <p class="navbar-text navbar-left"><a href="userMain.html">F-Weather!</a></p>
-      <p class="navbar-text navbar-right">You are not signed in...<a href="#" class="navbar-link">Register Here!</a></p>
+        <p class="navbar-text navbar-left"><a href="userMain.html">F-Weather!</a></p>
+        <p class="navbar-text navbar-right">You are not signed in...<a href="#" class="navbar-link">Register Here!</a></p>
     </div>
-  </nav>
+</nav>
 
-  <body>
+<body>
 
-
-
-
-
-
-
-
+<!-- Google Maps Container: -->
     <div class="container  guest-gmap">
-      <div class="row text-center">
-        <div class="col-md-1"></div>
-          <div class="col-md-10">
-            <div class="pac-card" id="pac-card">
-              <div>
-                <div id="title">
-                  Autocomplete search
+        <div class="row text-center">
+            <div class="col-md-1"></div>
+            <div class="col-md-10">
+                <div class="pac-card" id="pac-card">
+                    <div>
+                        <div id="title">
+                            Google Places Search:
+                        </div>
+                    </div>
+                    <div id="pac-container">
+                        <input id="pac-input" type="text" placeholder="Enter a location">
+                    </div>
                 </div>
-              </div>
-              <div id="pac-container">
-                <input id="pac-input" type="text"
-                    placeholder="Enter a location">
-              </div>
-            </div>
 
-            <div  id="map">
-            </div>
+                <div id="map">
+                </div>
 
-            <div id="infowindow-content">
-              <img src="" width="16" height="16" id="place-icon">
-              <span id="place-name"  class="title"></span><br>
-              <span id="place-address"></span>
+                <div id="infowindow-content">
+                    <img src="" width="16" height="16" id="place-icon">
+                    <span id="place-name" class="title"></span><br>
+                    <span id="place-address"></span>
+                </div>
             </div>
-
-          </div>
-          <div class="col-md-1"></div>
-      </div>
+        </div>
     </div>
-    <div class="container">
-      <div class="row text-center">
-        <div class="col-md-1"></div>
-          <form>
-            <div class="form-group col-md-5">
-              <label for="location">Search for location:</label>
-              <input type="text" class="form-control" id="placeSearch">
-            </div>
-             <!--right width, date dropdown?  -->
-            <!-- <div class="form-group col-md-5">
-              <label for="date">select date</label>
-              <input type="date" class="form-control" id="datepicker">
-            </div>
+<!-- End of Google Maps container -->
 
-            <div class="form-group col-md-5">
-              <label for="date">select date</label>
-              <input type="date" class="form-control" id="datepicker">
-            </div> -->
-<!-- date field not yet working -->
-<!-- <input type="text" name="birthdate" value="10/24/1984" />
+    <div class="hike-header container">
+        <div class="row text-center">
+          <div class="col-md-3"></div>
+            <div class="col-md-6">
+              <h2>Enter your hike data here:</h2>
+            </div>
+          <div class="col-md-3"></div>
+        </div>
+    </div>
 
-<script type="text/javascript">
-$(function() {
-    $('input[name="birthdate"]').daterangepicker({
-        singleDatePicker: true,
-        showDropdowns: true
-    },
-    function(start, end, label) {
-        var years = moment().diff(start, 'years');
-        alert("You are " + years + " years old.");
-    });
-});
-</script> -->
-          </form>
-        <div class="col-md-1"></div>
-      </div>
-      <div class="row text-center">
-        <div class="col-md-1"></div>
-        <div class="col-md-5">
-          <form>
-            <div class="form-group">
+    <div class="data-fields container">
+      <div class="col-md-4"></div>
+      <form>
+          <div class="row text-center form-group col-md-4">
               <label for="hikeName">Hike Name:</label>
               <input type="text" class="form-control" id="hikeName">
-            </div>
-            <div class="form-group">
-              <label for="temp-max">Max Temp:</label>
-              <input type="number" class="form-control" id="temp_max" >
-            </div>
-            <div class="form-group">
-              <label for="exampleInputPassword1">Min Temp:</label>
-              <input type="number" class="form-control" id="temp_min" >
-            </div>
-          </form>
-        </div>
-        <div class="col-md-5">
-          <form>
-            <div class="form-group">
-              <label for="precip_max">Precipitation:</label>
-              <input type="number" class="form-control" id="percip_max">
-            </div>
-            <div class="form-group">
-              <label for="Wind_max">Max Windspeed:</label>
-              <input type="number" class="form-control" id="Wind_max" >
-            </div>
-            <div class="form-group">
-              <label for="additionalInfo">Any additional info</label>
-              <input type="text" class="form-control" id="additionalInfo" >
-            </div>
-          </form>
-        </div>
-        <div class="col-md-1"></div>
-      </div>
-      <div class="row text-center">
-        <button type="subData" class="btn btn-info newInfo-submit">Go!</button>
-      </div>
+          </div>
+      </form>
+      <div class="col-md-4"></div>
     </div>
-  </body>
+
+    <div class = "data-fields container">
+      <!-- <div class="row text-center"> -->
+        <div class = "col-md-1"></div>
+        <div class="col-md-5">
+            <form>
+
+                <div class="form-group">
+                    <label for="temp-max">Max Temp:</label>
+                    <input type="number" class="form-control" id="temp_max">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Min Temp:</label>
+                    <input type="number" class="form-control" id="temp_min">
+                </div>
+            </form>
+          </div>
+          <div class = "col-md-1"></div>
+      <!-- </div> -->
+      <!-- <div class="row text-center"> -->
+        <div class = "col-md-1"></div>
+            <div class="col-md-5">
+                <form>
+                    <div class="form-group">
+                        <label for="precip_max">Precipitation:</label>
+                        <input type="number" class="form-control" id="percip_max">
+                    </div>
+                    <div class="form-group">
+                        <label for="Wind_max">Max Windspeed:</label>
+                        <input type="number" class="form-control" id="Wind_max">
+                    </div>
+                </form>
+            </div>
+            <div class="col-md-1"></div>
+    </div>
+    <div class="container">
+        <div class="row text-center">
+            <button type="subData" class="btn btn-info newInfo-submit">Go!</button>
+        </div>
+    </div>
+
+
+</body>
+
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js">
   </script>
   <!-- <script src="javascripts/mapsscripts.js"></script> -->
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCwFAV5metVJahzOozUUHyBfM3sA3Llftk&libraries=places&callback=initMap"
-  async defer></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCwFAV5metVJahzOozUUHyBfM3sA3Llftk&libraries=places&callback=initMap" async defer></script>
 
 </html>
