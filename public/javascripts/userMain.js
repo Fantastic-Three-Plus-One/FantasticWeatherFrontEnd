@@ -4,7 +4,7 @@ var server = heroku
 
 $(document).ready(() => {
   $.ajaxSetup({xhrFields: { withCredentials: true } })
-  $.get(`${server}/locations`,(data) =>{
+  $.get(`${server}/locations/user`,(data) =>{
     if (data.length < 3) {
       for (var i = 0; i < data.length; i++) {
         $('.scrollmenu').append(`<div class="border userLocation text-center">
