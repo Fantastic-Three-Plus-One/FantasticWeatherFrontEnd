@@ -108,8 +108,8 @@ $(document).on('click','.delete-btn',function(){
 })
 
 $(document).on('click', 'canvas', function (event) {
+  const myKey = 'fd59c08b71d9a82c1248b5012aca9c44'
   var locationID = $(event.target).attr('value')
-  console.log(locationID)
   $.get(`${server}/locations/${locationID}`)
     .then(function (data) {
       var locLong = data[0].longitude
@@ -120,23 +120,43 @@ $(document).on('click', 'canvas', function (event) {
       }
       return coordinates
     }).then( result => {
-      console.log('coordinates:');
       console.log(result);
       var myLongitude = result.longitude
       var myLatitude = result.latitude
       $.ajax({
-        url : "https://api.darksky.net/forecast/" + 'fd59c08b71d9a82c1248b5012aca9c44' + "/" + myLatitude + "," + myLongitude + "?exclude=minutely,hourly,alerts,flags",
+        url : "https://api.darksky.net/forecast/" + myKey + "/" + myLatitude + "," + myLongitude + "?exclude=minutely,hourly,alerts,flags",
         dataType : "jsonp",
-        success : function(pJSON) {
-          console.log(pJSON)
-
-          // var myTemp = parseInt(pJSON['currently']['temperature']);
-          // var myPrecip = pJSON['daily']['data'][0]['precipProbability']
-          // var myWind = pJSON['daily']['data'][0]['windSpeed']
-          // $(`.temp${result[j].id}`).append(`<p>Temperature: </p><p>${myTemp}&deg;F</p>`)
-          // $(`.precip${result[j].id}`).append(`<p>Precipitation: </p><p>${myPrecip} %</p>`)
-          // $(`.wind${result[j].id}`).append(`<p>Wind: </p><p>${myWind} mph</p>`)
+        success : function(darkData) {
+          console.log(darkData);
+          $('.each-forecast').remove()
+          for (var i = 0; i < 3; i++) {
+            var percent = 100 * darkData['daily']['data'][i]['precipProbability']
+            $('.forecasts').append(
+              "<div class='each-forecast'><p>Summary: " + darkData['daily']['data'][i]['summary'] + "</p>" +
+              "<p>Max Temp: " + darkData['daily']['data'][i]['temperatureMax'] + "</p>" +
+              "<p>Min Temp: " + darkData['daily']['data'][i]['temperatureMin'] + "</p>" +
+              "<p>Chance of rain:  " + percent + "%</p>" +
+              "<p>Wind Speed: " + darkData['daily']['data'][i]['windSpeed'] + "</p></div>" )
+          }
         }
-      })
+      });
   })
 })
+
+
+
+
+// $.ajax({
+//   url : "https://api.darksky.net/forecast/" + 'fd59c08b71d9a82c1248b5012aca9c44' + "/" + myLatitude + "," + myLongitude + "?exclude=minutely,hourly,alerts,flags",
+//   dataType : "jsonp",
+//   success : function(pJSON) {
+//     console.log(pJSON)
+//
+//     // var myTemp = parseInt(pJSON['currently']['temperature']);
+//     // var myPrecip = pJSON['daily']['data'][0]['precipProbability']
+//     // var myWind = pJSON['daily']['data'][0]['windSpeed']
+//     // $(`.temp${result[j].id}`).append(`<p>Temperature: </p><p>${myTemp}&deg;F</p>`)
+//     // $(`.precip${result[j].id}`).append(`<p>Precipitation: </p><p>${myPrecip} %</p>`)
+//     // $(`.wind${result[j].id}`).append(`<p>Wind: </p><p>${myWind} mph</p>`)
+//   }
+// })

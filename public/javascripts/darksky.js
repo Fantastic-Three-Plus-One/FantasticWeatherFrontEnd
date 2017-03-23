@@ -8,7 +8,7 @@ let getInfo = function(){
     // var myDate = $('#datepicker').val();
     // const myTime = 'T12:00:00'
     //Makes the request
-    let i = 0
+
     $.ajax({
       url : "https://api.darksky.net/forecast/" + myKey + "/" + myLatitude + "," + myLongitude
       // + "," + myDate
