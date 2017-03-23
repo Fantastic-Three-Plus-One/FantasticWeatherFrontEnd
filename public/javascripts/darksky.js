@@ -6,7 +6,6 @@ let getInfo = function(){
     let myLongitude = $('#long').val();
     let myLatitude = $('#lat').val();
     var myDate = $('#datepicker').val();
-    //var myDate = document.getElementById('datepicker').value
     const myTime = 'T12:00:00'
     //Makes the request
     $.ajax({
@@ -17,7 +16,8 @@ let getInfo = function(){
       success : function(darkData) {
         let whereAmI = darkData['timezone'];
         let myTemp = darkData['currently']['temperature'];
-        let myWeather = ("Current temperature in " + whereAmI + " is: " + myTemp);
+        let myWeather = ("Temperature on " + myDate + " in " + whereAmI + " is: " + myTemp);
+
         $('.result').html("<h3>" + myWeather + "</h3>")
         $('.lottsoweather').html(
           "<li>Max Temp: " + darkData['daily']['data'][0]['temperatureMax'] + "</li>" +
