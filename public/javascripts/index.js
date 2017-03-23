@@ -9,6 +9,7 @@ $(document).ready(function() {
 
 //on submit of the log in info, this will shoot the
 $(document).on('click', '.login-submit', function (e){
+  e.preventDefault()
   console.log('ahhhhh');
  e.preventDefault();
 

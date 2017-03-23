@@ -18,8 +18,11 @@ $(document).ready(function(){
           email: newEmail,
           password: pass
         }
+        // http:localhost:8080/verification/register
         //'https://fantastic-weather.herokuapp.com/verification/register
+
         $.ajax('http://localhost:8000/verification/register', {
+
           method: 'POST',
           contentType: 'application/json',
           crossDomain: true,

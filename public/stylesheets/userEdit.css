@@ -1,3 +1,15 @@
 .backToMain {
-  padding-top: -top: 50px;
+  margin: 50px;
+}
+
+.col-md-4 {
+
+}
+
+.row .col-md-4 {
+
+}
+
+.container .row .col-md-4 {
+
 }
