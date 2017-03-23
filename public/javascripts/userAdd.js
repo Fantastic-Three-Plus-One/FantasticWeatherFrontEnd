@@ -4,16 +4,14 @@
 
 
 // var heroku =
-var server = 'http://localhost:8080'
+var server = 'http://localhost:8000'
 // var server = 'https://fantastic-weather.herokuapp.com'
-
 
 var place
 var lng
 var lat
 
-
-// $.ajax('http://localhost:8080/verification/verify', {
+// $.ajax('http://localhost:8000/verification/verify', {
 //   xhrFields: {
 //     withCredentials: true
 //   },
@@ -41,24 +39,24 @@ $(document).on('click','.newInfo-submit', () => {
      }
     //  console.log(newLocation);
      $.ajaxSetup({xhrFields: { withCredentials: true } })
-     $.post(`${server}/locations`, newLocation)
+     $.post(`${server}/locations/user`, newLocation)
      .then((result) => {
-       console.log(result[0].id)
-       newIdealWeather = {
-       username_id: 2,
-       location_id: result[0].id,
-       temp_max: $('#temp_max').val(),
-       temp_min: $('#temp_min').val(),
-       wind_max: $('#Wind_max').val(),
-       percip_max: $('#percip_max').val()
-     }
-     console.log(newIdealWeather);
-     $.ajaxSetup({xhrFields: { withCredentials: true } })
-     $.post(`${server}/idealWeather`, newIdealWeather)
-     .then((result) => {
-       console.log(result)
-     }).catch(err => console.log("error", err))
-   //
+  //      console.log(result[0].id)
+  //      newIdealWeather = {
+  //      username_id: 2,
+  //      location_id: result[0].id,
+  //      temp_max: $('#temp_max').val(),
+  //      temp_min: $('#temp_min').val(),
+  //      wind_max: $('#Wind_max').val(),
+  //      percip_max: $('#percip_max').val()
+  //    }
+  //    console.log(newIdealWeather);
+  //    $.ajaxSetup({xhrFields: { withCredentials: true } })
+  //    $.post(`${server}/idealWeather`, newIdealWeather)
+  //    .then((result) => {
+  //      console.log(result)
+  //    }).catch(err => console.log("error", err))
+  //  //
     }).catch(err => console.log("error", err))
 
 
@@ -146,11 +144,8 @@ function initMap() {
     lat = place.geometry.location.lat();
     lng = place.geometry.location.lng();
 
-
     // console.log(place.geometry.location.lat(),place.geometry.location.lng())
     // console.log(place.place_id);
-
-
 
     infowindowContent.children['place-icon'].src = place.icon;
     infowindowContent.children['place-name'].textContent = place.name;

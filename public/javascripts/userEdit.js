@@ -1,29 +1,31 @@
-var hikeId
+var locationId
 var username_id
 
-var dev = 'https://fantasticweatherfrontend.firebaseapp.com'
+// var dev = 'https://fantasticweatherfrontend.firebaseapp.com'
 var heroku = 'https://fantastic-weather.herokuapp.com'
-var server = heroku
+var server = 'http://localhost:8000'
+// var server = heroku
 
 $(document).ready(function() {
 
-  hikeId = getUrlParameter('id')
-  console.log(hikeId)
+  locationId = getUrlParameter('id')
+  console.log(locationId)
   $.ajaxSetup({xhrFields: { withCredentials: true } })
-  $.get(`${server}/locations/${hikeId}`, (data)  => {
+  $.get(`${server}/idealWeather/user/${locationId}`, (data)  => {
     console.log(data)
     $('#hikeName').val(`${data[0].name}`)
-  })
-  $.ajaxSetup({xhrFields: { withCredentials: true } })
-  $.get(`${server}/idealWeather/${1}/${hikeId}`, (data) => {
-    console.log(data)
     $('#maxTemp').val(`${data[0].temp_max}`)
     $('#minTemp').val(`${data[0].temp_min}`)
     $('#wind_max').val(`${data[0].wind_max}`)
     $('#percip_max').val(`${data[0].percip_max}`)
-
-    username_id = data[0].username_id
   })
+  // $.ajaxSetup({xhrFields: { withCredentials: true } })
+  // $.get(`${server}/idealWeather/${1}/${hikeId}`, (data) => {
+  //   console.log(data)
+  //
+  //
+  //   username_id = data[0].username_id
+  // })
 })
 
 $(document).on('click','.name-submit', ()=>{
@@ -53,7 +55,7 @@ $(document).on('click','.info-submit', ()=>{
   }
   $.ajaxSetup({xhrFields: { withCredentials: true } })
   $.ajax({
-    url: `${server}/idealWeather/${username_id}/${hikeId}`,
+    url: `${server}/idealWeather/user/${locationId}`,
     type: 'PUT',
     data: updatedIdealWeather,
     success: function (result) {
