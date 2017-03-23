@@ -6,6 +6,7 @@ $(document).ready(function(){
     $.get(`${server}/verification/logout`)
       .then( () => {
         alert("successfully logged out")
+        location.href = '/Index.html'
       })
       .catch(err => {
         alert("there was an error logging out")
