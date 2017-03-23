@@ -92,6 +92,7 @@ $(document).ready(() => {
 })
 
 $(document).on('click','.delete-btn',function(){
+  $.ajaxSetup({xhrFields: { withCredentials: true } })
   var delId = $(this).attr('id');
   $.ajax({
     url: `${server}/locations/${delId}`,
