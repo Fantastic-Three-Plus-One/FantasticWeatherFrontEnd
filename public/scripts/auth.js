@@ -14,13 +14,15 @@ $(document).ready(function(){
       } else if (pass !== passConfirm) {
         alert("passwords must match")
       } else {
+
         var newUser = {
           email: newEmail,
           password: pass
         }
-        // http://localhost:8080/verification/register
+        console.log(newUser);
+
         //'https://fantastic-weather.herokuapp.com/verification/register
-        $.ajax('https:fantastic-weather.herokuapp.com/verification/register', {
+        $.ajax('http:localhost:8080/verification/register', {
           method: 'POST',
           contentType: 'application/json',
           crossDomain: true,

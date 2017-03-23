@@ -7,13 +7,9 @@
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel='stylesheet' type='text/css' href='stylesheets/index.css'>
-    <script src='javascripts/index.js'></script>
-    <!--ptorres-
-  tasks:
-       1- set up on click to change button color...or is there a bootstrap property to use?
-       2-
+    <!-- <script src='javascripts/index.js'></script> -->
+    <script type="text/javascript" src="scripts/auth.js"></script>
 
-       -->
   </head>
   <body>
     <!--hear not being used currently, but may want to insert a navbar later on fyi  -->
@@ -22,33 +18,45 @@
     <main>
       <div class="jumbotron jTron">
         <div class="container-fluid jImage title text-center">
-          <h1 class="something">Fantastic Weather</h1>
-  <!--button is not moving the way I want it to...if I make the page height shorter, the button just stays fixed and moves off of the jumbotron...how to correct!  -->
+          <h1 class="something">Fantastic Weather!</h1>
           <div class="button-manipulation">
             <button type="guest button" class="btn btn-info guest"><a href="guest.html">Try it out!</a></button>
           </div>
         </div>
       </div>
       <div class="container main-content">
-        <div class="row content border">
-          <div class="col-md-4 text-center lowerBox">
+        <div class="row content">
+          <div class="col-md-4 col-sm-4 text-center lowerBox border">
             <h3>Welcome to Fantastic Weather- the Perfect tool for your next Adventure!</h3>
             <p>When planning a trip to the great outdoors, weather matters! We are a tool for outdoor enthusiasts to monitor the weather at all of their favorite hiking and camping locations in one easy to use dashboard.
             </p>
           </div>
-          <div class="col-md-4 text-center lowerBox">
+          <div class="col-md-4 col-sm-4 text-center lowerBox border">
+            <h3>Register</h3>
+            <div class="registrationDiv">
+              <form class="submitRegistration" action="" method="post">
+                <label for="register">Email address</label>
+                <input class="emailRegister form-control" type="text" name="" value="" placeholder="Your email here...">
+                <label for="exampleInputPassword1">Create Password</label>
+                <input class="password form-control" type="password" name="" value="" placeholder="Password">
+                <input class="passwordConfirm form-control" type="password" name="" value="" placeholder="Confirm Password">
+                <input type="submit" value="submit">
+              </form>
+
+            </div>
           </div>
-          <div class="col-md-4 text-center lowerBox">
+          <div class="col-md-4 col-sm-4 text-center lowerBox border">
             <form>
               <div class="form-group">
+              <h3>Login</h3>
                 <label for="exampleInputEmail1">Email address</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+                <input type="email" class="form-control emailLogin" id="exampleInputEmail1" placeholder="Email">
               </div>
               <div class="form-group">
                 <label for="exampleInputPassword1">Password</label>
-                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                <input type="password" class="form-control passwordLogin" id="exampleInputPassword1" placeholder="Password">
               </div>
-              <button type="submit" class="btn btn-info login-submit">Submit</button>
+              <button type="submit" class="btn btn-info submit  submitLogin">Submit</button>
             </form>
           </div>
         </div>
