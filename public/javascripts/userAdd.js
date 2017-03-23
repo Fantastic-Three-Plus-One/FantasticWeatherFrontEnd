@@ -20,6 +20,7 @@ $(document).on('click','.newInfo-submit', ()=>{
        latitude: place.geometry.location.lat()
      }
     //  console.log(newLocation);
+     $.ajaxSetup({xhrFields: { withCredentials: true } })
      $.post(`${server}/locations`, newLocation)
      .then((result) => {
        console.log(result[0].id)
@@ -32,6 +33,7 @@ $(document).on('click','.newInfo-submit', ()=>{
        percip_max: $('#percip_max').val()
      }
      console.log(newIdealWeather);
+     $.ajaxSetup({xhrFields: { withCredentials: true } })
      $.post(`${server}/idealWeather`, newIdealWeather)
      .then((result) => {
        console.log(result)
