@@ -59,7 +59,7 @@ $(document).ready(() => {
     console.log('result:');
     console.log(result);
     for (let j = 0; j < result.length; j++) {
-      const myKey = '6c0dae0571b5513df10420a9d9b02045'
+      const myKey = 'fd59c08b71d9a82c1248b5012aca9c44'
       var getInfo = function(){
         //Grabs the longitude and latitude
         var myLongitude = parseFloat(result[j].longitude).toFixed(4)
