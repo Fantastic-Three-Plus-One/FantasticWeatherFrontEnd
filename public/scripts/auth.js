@@ -56,7 +56,7 @@ $(document).ready(function(){
             //   console.log(err)
             //   alert("failed");
             // })
-          location.href = "/loggedInTest.html"
+          location.href = "/UserMain.html"
         }).fail(function(err){
           alert("login information incorrect")
         })
