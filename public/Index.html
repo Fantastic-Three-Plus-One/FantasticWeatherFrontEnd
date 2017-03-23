@@ -7,7 +7,7 @@
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel='stylesheet' type='text/css' href='stylesheets/index.css'>
-    <!-- <script src='javascripts/index.js'></script> -->
+    <script src='javascripts/index.js'></script>
     <script type="text/javascript" src="scripts/auth.js"></script>
 
   </head>
@@ -34,7 +34,7 @@
           <div class="col-md-4 col-sm-4 text-center lowerBox border">
             <h3>Register</h3>
             <div class="registrationDiv">
-              <form class="submitRegistration" action="" method="post">
+              <form class="submitRegistration" action="" method="">
                 <label for="register">Email address</label>
                 <input class="emailRegister form-control" type="text" name="" value="" placeholder="Your email here...">
                 <label for="exampleInputPassword1">Create Password</label>
@@ -46,18 +46,29 @@
             </div>
           </div>
           <div class="col-md-4 col-sm-4 text-center lowerBox border">
-            <form>
+
               <div class="form-group">
-              <h3>Login</h3>
-                <label for="exampleInputEmail1">Email address</label>
-                <input type="email" class="form-control emailLogin" id="exampleInputEmail1" placeholder="Email">
+                <h3>dasdfadf</h3>
+                <form class="submitLogin">
+                  <label for="exampleInputEmail1">Email address</label>
+                  <input type="email" class="form-control emailLogin" id="exampleInputEmail1" placeholder="Your email here...">
+
+                  <!-- <input class="emailLogin" type="text" name="email" value="" placeholder="Your email here..."> -->
+                  <!-- <input class="passwordLogin" type="password" name="password" value="" placeholder="Password"> -->
+
+
+                  <label for="inputPassword">Password</label>
+                  <input type="password" class="form-control passwordLogin" id="inputPassword" placeholder="Password">
+                  <input type="submit" value="Login">
+                </form>
               </div>
+              <!-- </div>
               <div class="form-group">
                 <label for="exampleInputPassword1">Password</label>
                 <input type="password" class="form-control passwordLogin" id="exampleInputPassword1" placeholder="Password">
-              </div>
+
               <button type="submit" class="btn btn-info submit  submitLogin">Submit</button>
-            </form>
+            </form> -->
           </div>
         </div>
       </div>
