@@ -13,3 +13,11 @@
 .container .row .col-md-4 {
 
 }
+
+.jImage {
+  background-image:url(../images/grandCanyonbg.jpg);
+  height: 55%;
+  background-position: center;
+  opacity:0.7;
+
+}

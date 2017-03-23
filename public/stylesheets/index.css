@@ -21,6 +21,13 @@ a {
 
 }
 
+.jTron {
+  margin: 0px;
+  padding: 0px;
+  border-bottom: 5px;
+  border-bottom-color: darkblue;
+}
+
 .title {
   color: white;
   text-transform:
@@ -31,12 +38,7 @@ a {
   margin-bottom: 50px;
 }
 
-.jTron {
-  margin: 0px;
-  padding: 0px;
-  border-bottom: 5px;
-  border-bottom-color: darkblue;
-}
+
 
 .guest {
   position: relative;

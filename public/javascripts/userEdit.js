@@ -29,6 +29,10 @@ $(document).ready(function() {
 $(document).on('click','.name-submit', ()=>{
   var nameUpdate = {name:$('#hikeName').val()}
   console.log(nameUpdate)
+  if (nameUpdate.name === '') {
+    alert('please enter a hike name')
+  }
+  else {
   $.ajaxSetup({xhrFields: { withCredentials: true } })
   $.ajax({
     url: `${server}/locations/${hikeId}`,
@@ -41,6 +45,7 @@ $(document).on('click','.name-submit', ()=>{
       console.log('Something went wrong when trying to update location')
     }
   })
+  }
 })
 
 $(document).on('click','.info-submit', ()=>{
@@ -51,6 +56,21 @@ $(document).on('click','.info-submit', ()=>{
     wind_max: $('#wind_max').val(),
     percip_max: $('#percip_max').val()
   }
+  console.log(updatedIdealWeather);
+
+  if (updatedIdealWeather.temp_max === '') {
+    alert('please enter a valid maximum tempature value')
+  }
+  else if (updatedIdealWeather.temp_min === '') {
+    alert('please enter minimum tempature value')
+  }
+  else if (updatedIdealWeather.wind_max === '') {
+    alert('please enter max windspeed value')
+  }
+  else if (updatedIdealWeather.percip_max === '') {
+    alert('please enter a chance of rain value')
+  }
+  else {
   $.ajaxSetup({xhrFields: { withCredentials: true } })
   $.ajax({
     url: `${server}/idealWeather/${username_id}/${hikeId}`,
@@ -63,6 +83,7 @@ $(document).on('click','.info-submit', ()=>{
     console.log('Something went wrong when trying to update idealWeather')
     }
   })
+  }
 })
 
 function getUrlParameter(sParam) {
