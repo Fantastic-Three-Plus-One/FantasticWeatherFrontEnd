@@ -42,17 +42,17 @@ a {
 .lowerBox {
   padding right: 10px;
   padding left:10px;
+  /*border:solid;
+  border-width: 2px;
+  border-color:darkblue;
+  border-radius:20px;
+  margin: 10px;*/
+}
+
+.container .row .border {
   border:solid;
   border-width: 2px;
   border-color:darkblue;
   border-radius:20px;
   margin: 10px;
 }
-
-/*.border {
-  border:solid;
-  border-width: 2px;
-  border-color:darkblue;
-  border-radius:20px;
-  margin: 10px;
-}*/
