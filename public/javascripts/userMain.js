@@ -1,5 +1,5 @@
-// var heroku = 'https://fantastic-weather.herokuapp.com'
-var heroku = 'http://localhost:8080'
+var heroku = 'https://fantastic-weather.herokuapp.com'
+// var heroku = 'http://localhost:8080'
 var server = heroku
 
 $(document).ready(() => {
