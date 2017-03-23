@@ -81,10 +81,10 @@
           <form>
             <div class="form-group col-md-5">
               <label for="location">Search for location:</label>
-              <input type="email" class="form-control" id="placeSearch">
+              <input type="text" class="form-control" id="placeSearch">
             </div>
              <!--right width, date dropdown?  -->
-            <div class="form-group col-md-5">
+            <!-- <div class="form-group col-md-5">
               <label for="date">select date</label>
               <input type="date" class="form-control" id="datepicker">
             </div>
@@ -92,7 +92,7 @@
             <div class="form-group col-md-5">
               <label for="date">select date</label>
               <input type="date" class="form-control" id="datepicker">
-            </div>
+            </div> -->
 <!-- date field not yet working -->
 <!-- <input type="text" name="birthdate" value="10/24/1984" />
 
@@ -116,32 +116,32 @@ $(function() {
         <div class="col-md-5">
           <form>
             <div class="form-group">
-              <label for="exampleInputEmail1">Hike Name:</label>
-              <input type="email" class="form-control" id="hikeName">
+              <label for="hikeName">Hike Name:</label>
+              <input type="text" class="form-control" id="hikeName">
             </div>
             <div class="form-group">
-              <label for="exampleInputPassword1">Max Temp:</label>
-              <input class="form-control" id="temp_max" >
+              <label for="temp-max">Max Temp:</label>
+              <input type="number" class="form-control" id="temp_max" >
             </div>
             <div class="form-group">
               <label for="exampleInputPassword1">Min Temp:</label>
-              <input class="form-control" id="temp_min" >
+              <input type="number" class="form-control" id="temp_min" >
             </div>
           </form>
         </div>
         <div class="col-md-5">
           <form>
             <div class="form-group">
-              <label for="exampleInputEmail1">Precipitation:</label>
-              <input type="email" class="form-control" id="percip_max">
+              <label for="precip_max">Precipitation:</label>
+              <input type="number" class="form-control" id="percip_max">
             </div>
             <div class="form-group">
-              <label for="exampleInputPassword1">Max Windspeed:</label>
-              <input class="form-control" id="Wind_max" >
+              <label for="Wind_max">Max Windspeed:</label>
+              <input type="number" class="form-control" id="Wind_max" >
             </div>
             <div class="form-group">
-              <label for="exampleInputPassword1">Any additional info</label>
-              <input class="form-control" id="additionalInfo" >
+              <label for="additionalInfo">Any additional info</label>
+              <input type="text" class="form-control" id="additionalInfo" >
             </div>
           </form>
         </div>
