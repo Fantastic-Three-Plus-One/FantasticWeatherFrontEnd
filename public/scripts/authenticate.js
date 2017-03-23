@@ -1,6 +1,6 @@
 $(document).ready(function(){
   $.ajaxSetup({xhrFields: { withCredentials: true } })
-  $.ajax('http://localhost:8080/verification/verify', {
+  $.ajax('http://localhost:8000/verification/verify', {
     xhrFields: {
       withCredentials: true
     },

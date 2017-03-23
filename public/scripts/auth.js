@@ -19,7 +19,7 @@ $(document).ready(function(){
           password: pass
         }
         //'https://fantastic-weather.herokuapp.com/verification/register
-        $.ajax('http://localhost:8080/verification/register', {
+        $.ajax('http://localhost:8000/verification/register', {
           method: 'POST',
           contentType: 'application/json',
           crossDomain: true,
@@ -45,7 +45,7 @@ $(document).ready(function(){
           password: pass
         }
         //'https://fantastic-weather.herokuapp.com/verification
-        $.post('http://localhost:8080/verification/login', $(this).serialize()).done(
+        $.post('http://localhost:8000/verification/login', $(this).serialize()).done(
           function(data) {
             // $.ajax('http://localhost:5280/verification/verify', {
             //   method: "GET",
