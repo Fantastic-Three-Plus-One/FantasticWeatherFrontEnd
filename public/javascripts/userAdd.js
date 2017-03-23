@@ -1,29 +1,63 @@
 // $(document).ready(() => {
-$.ajaxSetup({xhrFields: { withCredentials: true } })
 
 
-// var heroku = 'https://fantastic-weather.herokuapp.com'
-var heroku = 'http://localhost:8080'
-var server = heroku
+
+// var heroku =
+var server = 'http://localhost:8080'
+// var server = 'https://fantastic-weather.herokuapp.com'
 
 var place
 var lng
 var lat
 var placeIdZip
 
-$(document).on('click','.newInfo-submit', ()=>{
+// $.ajax('http://localhost:8080/verification/verify', {
+//   xhrFields: {
+//     withCredentials: true
+//   },
+//   method: "GET",
+//   crossDomain: true
+// }).done(function(data){
+//   alert("success");
+// }).fail(function(err){
+//   console.log(err)
+//   // alert("failed");
+// })
+$.ajaxSetup({xhrFields: { withCredentials: true } })
+$.get(`${server}/locations`,(data) => {
+  console.log(data)
+})
+
+$(document).on('click','.newInfo-submit', () => {
   console.log('clicked!');
 
-    var newLocation = {
-       name: $('#hikeName').val(),
-       longitude: place.geometry.location.lng(),
-       latitude: place.geometry.location.lat()
-     }
-     console.log(newLocation);
-     $.post(`${server}/locations`, newLocation)
-     .then((result) => {
-       console.log(result);
-     })
+  var newLocation = {
+      name: $('#hikeName').val(),
+      longitude: place.geometry.location.lng(),
+      latitude: place.geometry.location.lat()
+    }
+  console.log(newLocation);
+  $.ajaxSetup({xhrFields: { withCredentials: true } })
+  $.post(`${server}/locations`, newLocation)
+  .then((result) => {
+    console.log(result);
+  })
+  .catch(err => console.log("error", err))
+
+  // $.ajax(`$`, {
+  //   xhrFields: {
+  //     withCredentials: true
+  //   },
+  //   method: "POST",
+  //   crossDomain: true,
+  //   contentType: "application/json",
+  //   data: newLocation
+  // }).done(function(data){
+  //   alert("success");
+  // }).fail(function(err){
+  //   console.log(err)
+  //   // alert("failed");
+  // })
     //  console.log(updatedIdealWeather);
     //  newIdealWeather = {
     //   //  username_id:// will come from passport
@@ -94,8 +128,8 @@ function initMap() {
     lng = place.geometry.location.lng();
     placeIdZip = place.place_id;
 
-    console.log(place.geometry.location.lat(),place.geometry.location.lng())
-    console.log(place.place_id);
+    // console.log(place.geometry.location.lat(),place.geometry.location.lng())
+    // console.log(place.place_id);
 
 
     infowindowContent.children['place-icon'].src = place.icon;
