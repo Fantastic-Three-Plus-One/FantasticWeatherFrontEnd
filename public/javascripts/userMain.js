@@ -68,7 +68,7 @@ $(document).ready(() => {
         console.log(myLatitude);
         //Makes the request
         $.ajax({
-          url : "https://api.darksky.net/forecast/" + myKey + "/" + myLatitude + "," + myLongitude + "?exclude=minutely,hourly,alerts,flags",
+          url : `https://api.darksky.net/forecast/${myKey}/${myLatitude},${myLongitude}?exclude=minutely,hourly,alerts,flags`,
           dataType : "jsonp",
           success : function(pJSON) {
             var skycons = new Skycons({"color": "black"})

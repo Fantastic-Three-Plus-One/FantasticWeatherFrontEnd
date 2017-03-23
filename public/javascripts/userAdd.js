@@ -7,11 +7,9 @@
 var server = 'http://localhost:8000'
 // var server = 'https://fantastic-weather.herokuapp.com'
 
-
 var place
 var lng
 var lat
-
 
 // $.ajax('http://localhost:8000/verification/verify', {
 //   xhrFields: {
@@ -146,11 +144,8 @@ function initMap() {
     lat = place.geometry.location.lat();
     lng = place.geometry.location.lng();
 
-
     // console.log(place.geometry.location.lat(),place.geometry.location.lng())
     // console.log(place.place_id);
-
-
 
     infowindowContent.children['place-icon'].src = place.icon;
     infowindowContent.children['place-name'].textContent = place.name;
