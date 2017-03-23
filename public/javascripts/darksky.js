@@ -5,28 +5,34 @@ let getInfo = function(){
     //Grabs the longitude and latitude
     let myLongitude = $('#long').val();
     let myLatitude = $('#lat').val();
-    var myDate = $('#datepicker').val();
-    const myTime = 'T12:00:00'
+    // var myDate = $('#datepicker').val();
+    // const myTime = 'T12:00:00'
     //Makes the request
+    let i = 0
     $.ajax({
       url : "https://api.darksky.net/forecast/" + myKey + "/" + myLatitude + "," + myLongitude
-      + "," + myDate + myTime
+      // + "," + myDate
+      // + myTime
       + "?exclude=minutely,hourly,alerts,flags",
       dataType : "jsonp",
       success : function(darkData) {
         let whereAmI = darkData['timezone'];
         let myTemp = darkData['currently']['temperature'];
-        let myWeather = ("Temperature on " + myDate + " in " + whereAmI + " is: " + myTemp);
+        let myWeather = ("Temperature in " + whereAmI + " is: " + myTemp);
+        $('.result').append("<h3>" + myWeather + "</h3>")
 
-        $('.result').html("<h3>" + myWeather + "</h3>")
-        $('.lottsoweather').html(
-          "<li>Max Temp: " + darkData['daily']['data'][0]['temperatureMax'] + "</li>" +
-          "<li>Min Temp: " + darkData['daily']['data'][0]['temperatureMin'] + "</li>" +
-          "<li>Max Wind: " + darkData['daily']['data'][0]['windSpeed']  + "</li>" +
-          "<li>Precip: " + darkData['daily']['data'][0]['precipProbability']  + "% </li>" +
-          "<li> Summary: " + darkData['daily']['summary']  + "</li>"
-          + "<li>" + darkData['currently']['icon'] + "</li>"
-        )
+        console.log(darkData['daily']['data'][0]['summary'])
+        console.log(darkData['daily']['data'][1]['summary'])
+        console.log(darkData['daily']['data'][2]['summary'])
+        for (var i = 0; i < 5; i++) {
+          $('.lottsoweather').append(
+            "<li>Summary: " + darkData['daily']['data'][i]['summary'] + "</li>" +
+            "<li>Max Temp: " + darkData['daily']['data'][i]['temperatureMax'] + "</li>" +
+            "<li>Min Temp: " + darkData['daily']['data'][i]['temperatureMin'] + "</li>" +
+            "<li>Rain?  " + darkData['daily']['data'][i]['precipProbability'] + "</li>" +
+            "<li>Wind Speed: " + darkData['daily']['data'][i]['windSpeed'] + "</li>" +
+            "<li>Icon: " + darkData['daily']['data'][i]['icon'] + "</li>" )
+        }
       }
     });
 }
