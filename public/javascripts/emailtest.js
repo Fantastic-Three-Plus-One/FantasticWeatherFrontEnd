@@ -1,3 +1,4 @@
+var server = 'https://fantastic-weather.herokuapp.com'
 $(document).on('click','.test-email-btn', function () {
   $.ajaxSetup({xhrFields: { withCredentials: true } })
   var mail = {
@@ -5,7 +6,7 @@ $(document).on('click','.test-email-btn', function () {
     text: 'Weather looks great today for your hike!'
   }
 
-  $.post('/mailgun', mail, function (result) {
+  $.post(`${server}/mailgun`, mail, function (result) {
     console.log(result);
   })
 })

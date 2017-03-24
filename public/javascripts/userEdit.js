@@ -2,8 +2,8 @@ var locationId
 var username_id
 
 // var dev = 'https://fantasticweatherfrontend.firebaseapp.com'
-var heroku = 'https://fantastic-weather.herokuapp.com'
-var server = 'http://localhost:8000'
+var server = 'https://fantastic-weather.herokuapp.com'
+// var server = 'http://localhost:8000'
 // var server = heroku
 
 $(document).ready(function() {

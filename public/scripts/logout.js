@@ -1,11 +1,12 @@
-var heroku = 'http://localhost:8000'
-var server = heroku
+
+
+var server = 'https://fantastic-weather.herokuapp.com'
 
 $(document).ready(function(){
   $('.logout').click(function(){
     $.get(`${server}/verification/logout`)
       .then( () => {
-        alert("successfully logged out")
+        // alert("successfully logged out")
         location.href = '/Index.html'
       })
       .catch(err => {
