@@ -121,6 +121,13 @@ form {
 
 }*/
 
+.jTron {
+  margin: 0px;
+  padding: 0px;
+  border-bottom: 5px;
+  border-bottom-color: darkblue;
+}
+
 .title {
   color: #000;
 }
@@ -130,12 +137,7 @@ form {
   margin-bottom: 50px;
 }
 
-.jTron {
-  margin: 0px;
-  padding: 0px;
-  border-bottom: 5px;
-  border-bottom-color: darkblue;
-}
+
 
 .guest {
   position: relative;

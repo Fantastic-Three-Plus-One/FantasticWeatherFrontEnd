@@ -13,3 +13,24 @@
 .container .row .col-md-4 {
 
 }
+
+
+.navbar {
+  font-family: 'Maven Pro', sans-serif;
+}
+body {
+  background-image:url(../images/arch.jpg);
+  background-size:cover;
+  background-repeat: no-repeat;
+
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: bold;
+  font-size: 20;
+}
+.wrap {
+  background-color:rgba(255,255,255, 0.8);
+  border-style: solid;
+  border-width: 2px;
+  border-color:rgba(26, 68, 24, 0.7);
+  border-radius: 10px;
+}

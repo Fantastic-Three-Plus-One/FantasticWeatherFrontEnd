@@ -5,30 +5,31 @@
     <title>Fantastic Weather</title>
     <!-- Latest compiled and minified CSS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans|Maven+Pro:700" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel='stylesheet' type='text/css' href='stylesheets/userEdit.css'>
     <script src='javascripts/userEdit.js'></script>
+    <script src='scripts/logout.js'></script>
   </head>
   <body>
     <nav class="navbar navbar-default navbar-static-top">
       <div class="container">
-        <p class="navbar-text navbar-left"><a href="index.html">F-Weather!</a></p>
-        <!-- append username in the navbar!  -->
-        <p class="navbar-text navbar-right list-userName">Welcome Back Giuseppe!</p>
+        <p class="navbar-text navbar-left"><a href="userMain.html">FANTASTIC WEATHER</a></p>
+        <button type="button" class="btn btn-default navbar-btn navbar-right logout">Logout</button>
+
       </div>
     </nav>
-
-    <div class="container">
+      <div class="container">
         <div class="row text-center">
           <div class="col-md-4"></div>
-          <div class="col-md-4">
+          <div class="col-md-4 wrap">
             <form>
               <div class="form-group">
                 <label for="hikeName">Hike Name:</label>
                 <input type="text" class="form-control" id="hikeName">
               </div>
             </form>
-            <button type="button" class="btn btn-default name-submit">Submit</button>
+            <button type="button" class="btn btn-default btn-primary name-submit">Submit</button>
               <div class="form-group">
                 <label for="maxTemp">Max Temp:</label>
                 <input type="number" class="form-control" id="maxTemp">
@@ -46,14 +47,17 @@
                 <input type="number" class="form-control" id="percip_max">
               </div>
             </form>
-            <button type="button" class="btn btn-default info-submit">Submit</button>
-
+            <button type="button" class="btn btn-default btn-primary info-submit">Submit</button>
+              <div class="row text-center">
+                <a href="UserMain.html"><button type="button" class="btn btn-default btn-success text-center backToMain">back to main page</button></a>
+              </div>
           </div>
        </div>
-       <div class="row text-center">
+       <!-- <div class="row text-center">
          <a href="UserMain.html"><button type="button" class="btn btn-default btn-success text-center backToMain">back to main page</button></a>
-       </div>
+       </div> -->
      </div>
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js">
     </script>
   </body>
