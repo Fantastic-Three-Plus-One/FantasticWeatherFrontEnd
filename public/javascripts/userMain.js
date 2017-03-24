@@ -1,10 +1,11 @@
 
-var server = 'https://fantastic-weather.herokuapp.com'
-// var heroku = 'http://localhost:8000'
+// var server = 'http://fantastic-weather.herokuapp.com'
+var server = 'http://localhost:8000'
 // var server = heroku
 
 $(document).ready(() => {
-  $.ajaxSetup({xhrFields: { withCredentials: true } })
+  $.ajaxSetup({xhrFields: { withCredentials: true }, crossDomain: false })
+  // $.ajaxSetup({xhrFields: { withCredentials: true } })
   $.get(`${server}/locations/user`,(data) =>{
     if (data.length < 3) {
       for (var i = 0; i < data.length; i++) {

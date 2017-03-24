@@ -1,6 +1,7 @@
 
 
-var server = 'https://fantastic-weather.herokuapp.com'
+// var server = 'http://fantastic-weather.herokuapp.com'
+var server = 'http://localhost:8000'
 
 $(document).ready(function(){
   $('.logout').click(function(){
