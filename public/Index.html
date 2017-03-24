@@ -7,70 +7,59 @@
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel='stylesheet' type='text/css' href='stylesheets/index.css'>
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans|Maven+Pro:700" rel="stylesheet">
     <script src='javascripts/index.js'></script>
     <script type="text/javascript" src="scripts/auth.js"></script>
 
   </head>
   <body>
+    <nav class="" id="indexNavHeader">
+      <div class="" id="indexNavHeader2">
+        <h1 class="">FANTASTIC WEATHER</h1>
+      </div>
+    </nav>
     <!--hear not being used currently, but may want to insert a navbar later on fyi  -->
     <header>
     </header>
     <main>
-      <div class="jumbotron jTron">
-        <div class="container-fluid jImage title text-center">
-          <h1 class="something">Fantastic Weather!</h1>
-          <div class="button-manipulation">
-            <button type="guest button" class="btn btn-info guest"><a href="guest.html">Try it out!</a></button>
+      <div class="container main-content">
+        <div class="row content">
+          <div class="authenticationFields">
+            <div class="singleAuthField">
+              <h3 class="headerMaven">Login</h3>
+              <form class="submitLogin">
+                <div class="loginForm">
+                  <label for="exampleInputEmail1" class="marginTop">Email address</label>
+                  <input type="email" class="form-control emailLogin" id="exampleInputEmail1" placeholder="Your email here...">
+                  <label for="inputPassword" class="marginTop">Password</label>
+                  <input type="password" class="form-control passwordLogin" id="inputPassword" placeholder="Password">
+                  <input class="marginTop regButton" type="submit" value="Login">
+                </div>
+              </form>
+            </div>
+
+            <div class="singleAuthField">
+              <h3 class="headerMaven">Register</h3>
+              <div class="registrationDiv">
+                <form class="submitRegistration" action="" method="">
+                  <div class="loginForm">
+                    <label for="register" class="marginTop">Email address</label>
+                    <input class="emailRegister form-control" type="text" name="" value="" placeholder="Your email here...">
+                    <label for="exampleInputPassword1" class="marginTop">Create Password</label>
+                    <input class="password form-control" type="password" name="" value="" placeholder="Password">
+                    <input class="passwordConfirm form-control" type="password" name="" value="" placeholder="Confirm Password">
+                    <input class="marginTop regButton" type="submit" value="submit">
+                  </div>
+                </form>
+              </div>
+            </div>
+
           </div>
         </div>
       </div>
-      <div class="container main-content">
-        <div class="row content">
-          <div class="col-md-4 col-sm-4 text-center lowerBox border">
-            <h3>Welcome to Fantastic Weather- the Perfect tool for your next Adventure!</h3>
-            <p>When planning a trip to the great outdoors, weather matters! We are a tool for outdoor enthusiasts to monitor the weather at all of their favorite hiking and camping locations in one easy to use dashboard.
-            </p>
-          </div>
-          <div class="col-md-4 col-sm-4 text-center lowerBox border">
-            <h3>Register</h3>
-            <div class="registrationDiv">
-              <form class="submitRegistration" action="" method="">
-                <label for="register">Email address</label>
-                <input class="emailRegister form-control" type="text" name="" value="" placeholder="Your email here...">
-                <label for="exampleInputPassword1">Create Password</label>
-                <input class="password form-control" type="password" name="" value="" placeholder="Password">
-                <input class="passwordConfirm form-control" type="password" name="" value="" placeholder="Confirm Password">
-                <input type="submit" value="submit">
-              </form>
-
-            </div>
-          </div>
-          <div class="col-md-4 col-sm-4 text-center lowerBox border">
-
-              <div class="form-group">
-                <h3>dasdfadf</h3>
-                <form class="submitLogin">
-                  <label for="exampleInputEmail1">Email address</label>
-                  <input type="email" class="form-control emailLogin" id="exampleInputEmail1" placeholder="Your email here...">
-
-                  <!-- <input class="emailLogin" type="text" name="email" value="" placeholder="Your email here..."> -->
-                  <!-- <input class="passwordLogin" type="password" name="password" value="" placeholder="Password"> -->
-
-
-                  <label for="inputPassword">Password</label>
-                  <input type="password" class="form-control passwordLogin" id="inputPassword" placeholder="Password">
-                  <input type="submit" value="Login">
-                </form>
-              </div>
-              <!-- </div>
-              <div class="form-group">
-                <label for="exampleInputPassword1">Password</label>
-                <input type="password" class="form-control passwordLogin" id="exampleInputPassword1" placeholder="Password">
-
-              <button type="submit" class="btn btn-info submit  submitLogin">Submit</button>
-            </form> -->
-          </div>
-        </div>
+      <div class="bottomText">
+        <h3 class="whiteText mavenPlain">Never Miss Great Hiking Weather Again.</h3>
+        <p class="whiteText josePlain">Fantastic weather will email you when the weather is good at your favorite locations.</p>
       </div>
     </main>
   </body>

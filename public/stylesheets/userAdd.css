@@ -1,11 +1,39 @@
 
 /*all pulled over from Steve's mapstyle.css*/
+/*font-family: 'Maven Pro', sans-serif;
+font-family: 'Josefin Sans', sans-serif;*/
+
 #map {
   height: 350px;
   border-radius: 10px;
+  border-color: black;
+  border-style: inset;
+  margin-bottom: 20px;
 }
 html, body {
-  height: 450px;
+  height: 100%;
+}
+body {
+  background-image: url(../images/userAddBackground.jpg);
+  background-size: cover;
+}
+.text-wrapper {
+  background-color: rgba(255,255,255,.5);
+  border-radius: 15px;
+  margin-bottom: 10px;
+}
+
+.hike-header {
+  font-family: 'Maven Pro', sans-serif;
+  color: black;
+  font-weight: bolder;
+  text-transform: uppercase;
+}
+.data-fields {
+  font-family: 'Josefin Sans', sans-serif;
+  color: black;
+  font-size: 2rem;
+  font-variant: small-caps;
 }
 
 #infowindow-content .title {
@@ -60,22 +88,21 @@ html, body {
 }
 
 #title {
+  font-family: 'Josefin Sans', sans-serif;
   color: #black;
-  font-size: 1rem;
+  font-size: 1.5rem;
+  text-align: left;
   font-weight: 500;
   padding: 3px 6px;
 }
-/*.jImage {
-  background-image:url(../images/grandCanyonbg.jpg);
-  height: 55%;
-  background-position: center;
-  opacity:0.7;
 
+
+.btn-info {
+  margin-bottom: 25px;
+}
+.navbar {
+  font-family: "Maven Pro", sans-serif;
+  font-size: 2rem;
+  font-weight: bold;
 }
 
-.jTron {
-  margin: 0px;
-  padding: 0px;
-  border-bottom: 5px;
-  border-bottom-color: darkblue;
-}*/
