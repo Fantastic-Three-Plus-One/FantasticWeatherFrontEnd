@@ -1,3 +1,5 @@
+var server = 'https://fantastic-weather.herokuapp.com'
+
 $(document).ready(function(){
   $.ajaxSetup({xhrFields: { withCredentials: true } })
   $.support.cors = true;
@@ -22,14 +24,14 @@ $(document).ready(function(){
         // http:localhost:8080/verification/register
         //'https://fantastic-weather.herokuapp.com/verification/register
 
-        $.ajax('http://localhost:8000/verification/register', {
+        $.ajax(`${server}/verification/register`, {
 
           method: 'POST',
           contentType: 'application/json',
           crossDomain: true,
           data: JSON.stringify(newUser)
         }).then(response => {
-          alert("New User Created!")
+          // alert("New User Created!")
         })
       }
     }
@@ -64,10 +66,10 @@ $(document).ready(function(){
             //   console.log(err)
             //   alert("failed");
             // })
-          alert("you are logged in!")
+          // alert("you are logged in!")
           location.href = "/UserMain.html"
         }).fail(function(err){
-          alert("login information incorrect")
+          // alert("login information incorrect")
         })
       }
     }
