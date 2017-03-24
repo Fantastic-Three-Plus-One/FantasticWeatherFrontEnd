@@ -1,6 +1,10 @@
+
+var server = 'https://fantastic-weather.herokuapp.com'
+
 // var heroku =
-var server = 'http://localhost:8000'
+// var server = 'http://localhost:8000'
 // var server = 'https://fantastic-weather.herokuapp.com'
+
 
 $(document).on('click','.test-email-btn', function () {
   $.ajaxSetup({xhrFields: { withCredentials: true } })

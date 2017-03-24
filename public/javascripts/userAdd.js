@@ -1,5 +1,13 @@
-$(document).ready(() => {
-var heroku =
+
+// $(document).ready(() => {
+
+
+
+
+// var heroku =
+
+// $(document).ready(() => {
+
 // var server = 'http://localhost:8000'
 var server = 'https://fantastic-weather.herokuapp.com'
 
