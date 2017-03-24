@@ -72,6 +72,7 @@ $(document).ready(() => {
           url : `https://api.darksky.net/forecast/${myKey}/${myLatitude},${myLongitude}?exclude=minutely,hourly,alerts,flags`,
           dataType : "jsonp",
           success : function(pJSON) {
+            console.log(pJSON);
             var skycons = new Skycons({"color": "black"})
             var WeatherIcon = pJSON.currently.icon
             var newWeatherIcon = WeatherIcon.replace(/-/g, '_').toUpperCase()
