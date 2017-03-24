@@ -23,6 +23,7 @@ $.get(`${server}/locations`,(data) => {
 $(document).on('click','.newInfo-submit', () => {
   console.log('clicked!');
 
+  $('.form-group').find('.form-control').val('');
 
     var newLocation = {
        name: $('#hikeName').val(),
@@ -33,6 +34,8 @@ $(document).on('click','.newInfo-submit', () => {
      $.ajaxSetup({xhrFields: { withCredentials: true } })
      $.post(`${server}/locations/user`, newLocation)
      .then((result) => {
+
+       alert("Congrats you've added a hike!");
   //      console.log(result[0].id)
   //      newIdealWeather = {
   //      username_id: 2,
