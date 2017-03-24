@@ -10,19 +10,27 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel='stylesheet' type='text/css' href='stylesheets/userAdd.css'>
     <script src='javascripts/userAdd.js'></script>
+    <script src='scripts/logout.js'></script>
     <link href="https://fonts.googleapis.com/css?family=Josefin+Sans|Maven+Pro" rel="stylesheet">
 </head>
 
 <nav class="navbar navbar-default navbar-static-top">
-    <div class="container">
-        <p class="navbar-text navbar-left"><a href="userMain.html">F-Weather!</a></p>
-        <p class="navbar-text navbar-right">You are not signed in...<a href="#" class="navbar-link">Register Here!</a></p>
-    </div>
+      <div class="container">
+        <p class="navbar-text navbar-left"><a href="userMain.html">FANTASTIC WEATHER</a></p>
+        <button type="button" class="btn btn-default navbar-btn navbar-right logout">Logout</button>
+      </div>
 </nav>
 
 <body>
+  <div class="row text-center">
+    <div class="col-md-4"></div>
+    <div class="text-wrapper col-md-4">
+      <h1>Find Your Favorite Trail</h1>
+    </div>
+    <div class="col-md-4"></div>
+  </div>
 
-<!-- Google Maps Container: -->
+    <!-- Google Maps Container: -->
     <div class="container  guest-gmap">
         <div class="row text-center">
             <div class="col-md-1"></div>
@@ -49,49 +57,49 @@
             </div>
         </div>
     </div>
-<!-- End of Google Maps container -->
-
-    <div class="hike-header container">
-        <div class="row text-center">
-          <div class="col-md-3"></div>
-            <div class="col-md-6">
-              <h2>Enter your hike data here:</h2>
-            </div>
-          <div class="col-md-3"></div>
-        </div>
-    </div>
-
-    <div class="data-fields container">
-      <div class="col-md-4"></div>
-      <form>
-          <div class="row text-center form-group col-md-4">
-              <label for="hikeName">Hike Name:</label>
-              <input type="text" class="form-control" id="hikeName">
-          </div>
-      </form>
-      <div class="col-md-4"></div>
-    </div>
-
-    <div class = "data-fields container">
-      <!-- <div class="row text-center"> -->
-        <div class = "col-md-1"></div>
-        <div class="col-md-5">
-            <form>
-
-                <div class="form-group">
-                    <label for="temp-max">Max Temp:</label>
-                    <input type="number" class="form-control" id="temp_max">
+    <!-- End of Google Maps container -->
+    <div class="text-wrapper container">
+        <div class="hike-header container">
+            <div class="row text-center">
+                <div class="col-md-3"></div>
+                <div class="col-md-6">
+                    <h2>Enter your hike data here:</h2>
                 </div>
-                <div class="form-group">
-                    <label for="exampleInputPassword1">Min Temp:</label>
-                    <input type="number" class="form-control" id="temp_min">
+                <div class="col-md-3"></div>
+            </div>
+        </div>
+
+        <div class="data-fields container">
+            <div class="col-md-4"></div>
+            <form>
+                <div class="row text-center form-group col-md-4">
+                    <label for="hikeName">Hike Name:</label>
+                    <input type="text" class="form-control" id="hikeName">
                 </div>
             </form>
-          </div>
-          <div class = "col-md-1"></div>
-      <!-- </div> -->
-      <!-- <div class="row text-center"> -->
-        <div class = "col-md-1"></div>
+            <div class="col-md-4"></div>
+        </div>
+
+        <div class="data-fields container">
+            <!-- <div class="row text-center"> -->
+            <div class="col-md-1"></div>
+            <div class="col-md-5">
+                <form>
+
+                    <div class="form-group">
+                        <label for="temp-max">Max Temp:</label>
+                        <input type="number" class="form-control" id="temp_max">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">Min Temp:</label>
+                        <input type="number" class="form-control" id="temp_min">
+                    </div>
+                </form>
+            </div>
+            <div class="col-md-1"></div>
+            <!-- </div> -->
+            <!-- <div class="row text-center"> -->
+            <div class="col-md-1"></div>
             <div class="col-md-5">
                 <form>
                     <div class="form-group">
@@ -105,19 +113,20 @@
                 </form>
             </div>
             <div class="col-md-1"></div>
-    </div>
-    <div class="container">
-        <div class="row text-center">
-            <button type="subData" class="btn btn-info newInfo-submit">Go!</button>
+        </div>
+        <div class="container">
+            <div class="row text-center">
+                <button type="subData" class="btn btn-info newInfo-submit">Go!</button>
+            </div>
         </div>
     </div>
 
 
 </body>
 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js">
-  </script>
-  <!-- <script src="javascripts/mapsscripts.js"></script> -->
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCwFAV5metVJahzOozUUHyBfM3sA3Llftk&libraries=places&callback=initMap" async defer></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js">
+</script>
+<!-- <script src="javascripts/mapsscripts.js"></script> -->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCwFAV5metVJahzOozUUHyBfM3sA3Llftk&libraries=places&callback=initMap" async defer></script>
 
 </html>
