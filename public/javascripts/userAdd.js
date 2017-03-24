@@ -1,28 +1,12 @@
-// $(document).ready(() => {
-
-
-
-
-// var heroku =
-var server = 'http://localhost:8000'
-// var server = 'https://fantastic-weather.herokuapp.com'
+$(document).ready(() => {
+var heroku =
+// var server = 'http://localhost:8000'
+var server = 'https://fantastic-weather.herokuapp.com'
 
 var place
 var lng
 var lat
 
-// $.ajax('http://localhost:8000/verification/verify', {
-//   xhrFields: {
-//     withCredentials: true
-//   },
-//   method: "GET",
-//   crossDomain: true
-// }).done(function(data){
-//   alert("success");
-// }).fail(function(err){
-//   console.log(err)
-//   // alert("failed");
-// })
 $.ajaxSetup({xhrFields: { withCredentials: true } })
 $.get(`${server}/locations`,(data) => {
   console.log(data)
@@ -91,7 +75,7 @@ $(document).on('click','.newInfo-submit', () => {
 function initMap() {
   var map = new google.maps.Map(document.getElementById('map'), {
     center: {lat: 39.7439, lng: -105.0201},
-    zoom: 10
+    zoom: 8
   });
   var card = document.getElementById('pac-card');
   var input = document.getElementById('pac-input');
